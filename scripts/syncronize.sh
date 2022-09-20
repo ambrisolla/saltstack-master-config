@@ -13,11 +13,12 @@ LOG_FILE="${WORKSPACE_DIR}/s/scripts/syncronize.log"
 
 sync_etc() {
   has_diff=0
-  for file in `find ${WORKSPACE_DIR}/s/etc -type f `; 
+  for file in `find ${WORKSPACE_DIR}/s/etc -type f 2> /dev/null 2> /dev/null `; 
   do 
     dest_file=$(echo ${file} | sed -re "s|$WORKSPACE_DIR/s||g"  )
     if ! diff $file $dest_file
     then
+      echo "Syncing ${dest_file}..."
       sudo rsync -a $file $dest_file
       has_diff=1
     fi
