@@ -6,10 +6,10 @@
 # Goal    : Syncronize Salt configuration files
 #
 
-
+WORKSPACE_DIR=$1
 
 sync_etc() {
-  echo "= $(Pipeline.Workspace) ="
+  echo "= $1 ="
 }
 
-sync_etc
+sync_etc ${WORKSPACE_DIR}
