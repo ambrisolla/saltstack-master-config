@@ -18,15 +18,20 @@ sync_etc() {
     dest_file=$(echo ${file} | sed -re "s|$WORKSPACE_DIR/s||g"  )
     if ! diff $file $dest_file
     then
-      echo "Syncing ${dest_file}..."
+      echo "Syncing \"${dest_file}\" file."
       sudo rsync -a $file $dest_file
       has_diff=1
     fi
   done
   if [ $has_diff -eq 1 ]
   then
-    echo "Restart Salt Master"
-    sudo systemctl restart salt-master
+    if sudo systemctl restart salt-master
+    then
+      echo "Restarting Salt Master... ok"
+    else
+      echo "Restarting Salt Master... fail"
+    fi
+    
   fi
 
 
