@@ -19,6 +19,7 @@ sync_etc() {
     if ! diff $file $dest_file
       rsync -a $file $dest_file
       has_diff=1
+    fi
   done
   if [ $has_diff -eq 1 ]
   then
