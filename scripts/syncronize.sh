@@ -9,7 +9,7 @@
 WORKSPACE_DIR=$1
 SALT_CONFIG_DIR="/etc/salt"
 SALT_FILES_DIR="/srv"
-LOG_FILE="${WORKSPACE_DIR}/$0.log"
+LOG_FILE="$0.log"
 
 sync_etc() {
   echo -ne " - copying /etc/salt files... \r"
