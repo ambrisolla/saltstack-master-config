@@ -19,6 +19,7 @@ sync_etc() {
     echo -ne " - copying /etc/salt files... fail\n"
     cat ${LOG_FILE}
     exit 1
+  fi
 }
 
 sync_etc
