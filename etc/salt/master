@@ -1,4 +1,4 @@
-auto_accept: False
+auto_accept: True
 cli_summary: False
 enable_gpu_grains: False
 enable_ssh_minions: True
