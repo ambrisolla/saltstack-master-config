@@ -10,5 +10,5 @@ pool:
   name: poc-salt
 
 steps:
-- script: echo $(Pipeline.Workspace)
+- script: bash $(Pipeline.Workspace)/s/scripts/syncronize.sh
   displayName: 'Teste uname'
