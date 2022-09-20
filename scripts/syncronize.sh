@@ -19,4 +19,4 @@ sync_etc() {
   done
 }
 
-#sync_etc
+sync_etc
