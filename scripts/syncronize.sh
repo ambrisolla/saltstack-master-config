@@ -17,6 +17,7 @@ sync_etc() {
   do 
     dest_file=$(echo ${file} | sed -re "s|$WORKSPACE_DIR/s||g"  )
     if ! diff $file $dest_file
+    then
       rsync -a $file $dest_file
       has_diff=1
     fi
