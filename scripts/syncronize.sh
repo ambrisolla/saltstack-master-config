@@ -37,8 +37,6 @@ sync_etc() {
       exit 1
     fi
   fi
-
-
 }
 
 sync_etc
