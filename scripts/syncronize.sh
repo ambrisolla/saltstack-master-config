@@ -16,6 +16,7 @@ sync_etc() {
   do 
     dest_file=$(echo ${file} | sed -re "s|$WORKSPACE_DIR/s||g"  )
     diff $file $dest_file
+    echo $file
   done
 }
 
