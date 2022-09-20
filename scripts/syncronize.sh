@@ -13,7 +13,7 @@ LOG_FILE="${WORKSPACE_DIR}/s/scripts/syncronize.log"
 
 sync_etc() {
   has_diff=0
-  for file in `find ${WORKSPACE_DIR}/s/etc -type f 2> /dev/null 2> /dev/null `; 
+  for file in `find ${WORKSPACE_DIR}/s/etc -type f `; 
   do 
     dest_file=$(echo ${file} | sed -re "s|$WORKSPACE_DIR/s||g"  )
     if ! diff $file $dest_file
