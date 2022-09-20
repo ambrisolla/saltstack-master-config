@@ -12,12 +12,21 @@ SALT_FILES_DIR="/srv"
 LOG_FILE="${WORKSPACE_DIR}/s/scripts/syncronize.log"
 
 sync_etc() {
+  has_diff=0
   for file in `find ${WORKSPACE_DIR}/s/etc -type f `; 
   do 
     dest_file=$(echo ${file} | sed -re "s|$WORKSPACE_DIR/s||g"  )
-    diff $file $dest_file
-    echo "$file -> $dest_file"
+    if ! diff $file $dest_file
+      rsync -a $file $dest_file
+      has_diff=1
   done
+  if [ $has_diff -eq 1 ]
+  then
+    echo "Restart Salt Master"
+    systemctl restart salt-master
+  fi
+
+
 }
 
 sync_etc
