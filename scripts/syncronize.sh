@@ -59,4 +59,4 @@ sync_etc_2() {
 }
 
 #sync_etc
-sync_etc2
+sync_etc_2
