@@ -52,6 +52,7 @@ sync_etc_2() {
     else
       echo "Error Restarting Salt Master!"
       exit 1
+    fi
   else
     echo "Nothing changed in \"/etc/salt\""
   fi 
