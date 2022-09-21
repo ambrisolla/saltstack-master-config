@@ -41,11 +41,11 @@ sync_etc() {
 
 
 sync_etc_2() {
-  _rsync=$(rsync -aEim ${WORKSPACE_DIR}/s/etc/salt/* /etc/salt/)
-  if [ -n $_rsync ]
+  _rsync=$(sudo rsync -aEim ${WORKSPACE_DIR}/s/etc/salt/* /etc/salt/)
+  if [ -n "$_rsync" ]
   then
     echo "Direcotory \"/etc/salt\" has changed. Restarting Salt Master..."
-    systemctl restart salt-master
+    sudo systemctl restart salt-master
     if [ $? -eq 0 ]
     then
       echo "Salt Master Restarted!"
