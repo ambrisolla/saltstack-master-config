@@ -1,5 +1,5 @@
 default_packages:
-  - vim-common
+  - vim-enhanced
   - net-tools
   - zip
   - unzip
