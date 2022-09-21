@@ -29,5 +29,15 @@ sync_etc() {
   fi 
 }
 
-#sync_etc
+sync_srv() {
+  _rsync=$(sudo rsync -aEim ${WORKSPACE_DIR}/s/srv/{salt,pillar} /srv)
+  if [ -n "$_rsync" ]
+  then
+    echo "Direcotories \"/srv/salt\" and \"/srv/pillar\" has changed!"
+  else
+    echo "Nothing changed in \"/srv/salt\" and \"/srv/pillar\" directories!"
+  fi
+}
+
 sync_etc
+sync_srv
