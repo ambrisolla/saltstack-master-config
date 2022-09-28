@@ -12,7 +12,7 @@ SALT_FILES_DIR="/srv"
 LOG_FILE="${WORKSPACE_DIR}/s/scripts/syncronize.log"
 
 sync_etc() {
-  _rsync=$(sudo rsync -aEim ${WORKSPACE_DIR}/s/etc/salt/* /etc/salt/)
+  _rsync=$(sudo rsync -aEim --delete ${WORKSPACE_DIR}/s/etc/salt/* /etc/salt/)
   if [ -n "$_rsync" ]
   then
     echo "Direcotory \"/etc/salt\" has changed. Restarting Salt Master..."
@@ -30,7 +30,7 @@ sync_etc() {
 }
 
 sync_srv() {
-  _rsync=$(sudo rsync -aEim ${WORKSPACE_DIR}/s/srv/{salt,pillar} /srv)
+  _rsync=$(sudo rsync -aEim --delete ${WORKSPACE_DIR}/s/srv/{salt,pillar} /srv)
   if [ -n "$_rsync" ]
   then
     echo "Direcotories \"/srv/salt\" and \"/srv/pillar\" has changed!"
