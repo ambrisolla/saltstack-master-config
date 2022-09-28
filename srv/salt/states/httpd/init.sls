@@ -3,4 +3,5 @@ install_httpd:
     - name: httpd
 enable_httpd:
   service.running:
+    - name: httpd
     - enable: True  
