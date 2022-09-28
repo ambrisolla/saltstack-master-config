@@ -1,6 +1,8 @@
 install_httpd:
   pkg.installed:
-    - name: httpd
+    - pkgs: 
+        - httpd
+        - telnet
 enable_httpd:
   service.running:
     - name: httpd
