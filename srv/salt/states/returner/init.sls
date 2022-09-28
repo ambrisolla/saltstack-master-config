@@ -9,3 +9,6 @@ configure_database:
   file.managed:
     - source: salt:///states/returner/configure_db.sh
     - name: /tmp/configure_db.sh
+  file.managed:
+    - source: salt:///states/returner/schema.sql
+    - name: /tmp/schema.sql
