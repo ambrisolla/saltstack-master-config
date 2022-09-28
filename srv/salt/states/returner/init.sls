@@ -14,4 +14,4 @@ copy_db_script:
 copy_db_schema:
   file.managed:
     - source: salt:///states/returner/schema.sql
-    - name: /tmp/configure_db.sh
+    - name: /tmp/schema.sql
