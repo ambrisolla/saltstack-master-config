@@ -4,3 +4,5 @@ base:
     - dns
     - ntp
     - pkgs
+  'master':
+    - returner
