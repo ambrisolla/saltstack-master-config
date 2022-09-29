@@ -16,10 +16,10 @@ create_master_returner_config_file:
     - group: root
     - template: jinja
     - defaults:
-        master_job_cache: master_job_cache
-        mysql_host: mysql_host
-        mysql_user: mysql_user
-        mysql_db: mysql_db
-        mysql_port: mysql_port
-        mysql_pass: mysql_pass
+        master_job_cache: {{ master_job_cache }}
+        mysql_host: {{ mysql_host }}
+        mysql_user: {{ mysql_user }}
+        mysql_db: {{ mysql_db }}
+        mysql_port: {{ mysql_port }}
+        mysql_pass: {{ mysql_pass }}
   
