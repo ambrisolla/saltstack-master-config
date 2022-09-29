@@ -22,3 +22,4 @@ job_cache: True
 max_open_files: 100000
 order_masters: True
 master_type: failover
+gpg_keydir: /etc/gpgkeys/
