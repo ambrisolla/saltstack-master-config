@@ -10,5 +10,5 @@ pool:
   name: poc-salt
 
 steps:
-- script: bash $(Pipeline.Workspace)/s/scripts/syncronize.sh $(Pipeline.Workspace)
+- script: bash $(Pipeline.Workspace)/s/scripts/sync_master_files.sh $(Pipeline.Workspace)
   displayName: 'Syncronize Salt files'

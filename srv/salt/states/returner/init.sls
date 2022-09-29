@@ -22,4 +22,12 @@ create_master_returner_config_file:
         mysql_db: {{ mysql_db }}
         mysql_port: {{ mysql_port }}
         mysql_pass: {{ mysql_pass }}
+restart_salt_master_if_returner_config_file_changes:
+  service.running:
+    - name: salt-master
+    - full_restart: true
+    - enable: true
+    - watch:
+      - file: /etc/salt/master.d/returner.conf  
+
   
