@@ -25,7 +25,7 @@ sync_etc() {
       exit 1
     fi
   else
-    echo "Nothing changed in \"/etc/salt\""
+    echo "Nothing changed in \"/etc/salt\"!"
   fi 
 }
 
