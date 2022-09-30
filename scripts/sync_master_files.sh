@@ -35,7 +35,7 @@ sync_srv() {
   then
     echo "Direcotories \"/srv/salt\" and \"/srv/pillar\" has changed!"
   else
-    echo "Nothing changed in \"/srv/salt\" and \"/srv/pillar\" directories!"
+    echo "Nothing changed in \"/srv/salt\" and \"/srv/pillar\"!"
   fi
 }
 
